@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot Config Server Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        section {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 3px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+        }
+        ol {
+            margin-top: 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+	
+	<section>	https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_spring_cloud_config_server</section>
+
+<!-- Medium Article Section -->
+<section>
+    <h2>Medium Article</h2>
+    <p>Read the detailed guide on building a microservice with Spring Boot Config Server:</p>
+    <p><a href="https://medium.com/@erayaraz10/building-a-microservice-with-spring-boot-config-server-a-step-by-step-guide-with-code-explanation-769d548cd71d">Building a Microservice with Spring Boot Config Server</a></p>
+</section>
+
+<!-- Spring Cloud Config Documentation Section -->
+<section>
+    <h2>Spring Cloud Config Documentation</h2>
+    <p>Explore the official Spring Cloud Config Server documentation:</p>
+    <p><a href="https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_spring_cloud_config_server">Spring Cloud Config Server Documentation</a></p>
+</section>
+
+<!-- Baeldung Tutorial Section -->
+<section>
+    <h2>Baeldung Tutorial</h2>
+    <p>Learn more about Spring Cloud Configuration with Baeldung's tutorial:</p>
+    <p><a href="https://www.baeldung.com/spring-cloud-configuration">Spring Cloud Configuration Tutorial</a></p>
+</section>
+
+<!-- Git Command Section -->
+<section>
+    <h2>Git Command</h2>
+    <p>To get the current Git user email, execute the following command in the command prompt:</p>
+    <pre><code>git config --get user.email</code></pre>
+</section>
+
+<!-- Truststore Creation Section -->
+<section>
+    <h2>Creating a Truststore File</h2>
+    <p>To obtain the truststore file (<code>truststore.jks</code>):</p>
+    <ol>
+        <li>Open a terminal or command prompt.</li>
+        <li>Run the following command to create a new truststore file:</li>
+    </ol>
+    <pre><code>keytool -genkeypair -alias myserver -keyalg RSA -keysize 2048 -keystore truststore.jks -validity 3650</code></pre>
+    <p>This command generates a new RSA key pair and saves it in a keystore file named <code>truststore.jks</code>. You can change the alias (<code>myserver</code>), key algorithm (<code>RSA</code>), key size (<code>2048</code>), and validity period (<code>3650</code> days) according to your requirements.</p>
+    <p>You'll be prompted to enter information such as the keystore password, distinguished name, and other details. Fill in the required information.</p>
+    <p>Once the truststore file is created, you can use the path to this file (<code>/path/to/truststore.jks</code>) in your Spring Boot application's <code>application.properties</code> or <code>application.yml</code> file as shown in the previous example:</p>
+    <pre><code>spring.cloud.config.server.git.ssl.trust-store=/path/to/truststore.jks</code></pre>
+    <p>Replace <code>/path/to/truststore.jks</code> with the actual path where your truststore file is located on your system.</p>
+    <p>If you already have a truststore file provided by your system administrator or security team, simply use the path to that truststore file in your Spring Boot application's configuration.</p>
+</section>
+
+<section>
+	<h3>Notes</h3>
+	<p>
+		To get the path to the truststore file (truststore.jks), you can create it using the Java keytool command-line utility or obtain it from your system administrator or security team. Here's how you can create a truststore file using keytool:
+		
+		Open a terminal or command prompt.
+		Run the following command to create a new truststore file:
+		sh
+		Copy code
+		keytool -genkeypair -alias myserver -keyalg RSA -keysize 2048 -keystore truststore.jks -validity 3650
+		This command generates a new RSA key pair and saves it in a keystore file named truststore.jks. You can change the alias (myserver), key algorithm (RSA), key size (2048), and validity period (3650 days) according to your requirements.
+		You'll be prompted to enter information such as the keystore password, distinguished name, and other details. Fill in the required information.
+		Once the truststore file is created, you can use the path to this file (/path/to/truststore.jks) in your Spring Boot application's application.properties or application.yml file as shown in the previous example:
+		properties
+		Copy code
+		spring.cloud.config.server.git.ssl.trust-store=/path/to/truststore.jks
+		Replace /path/to/truststore.jks with the actual path where your truststore file is located on your system.
+		
+		If you already have a truststore file provided by your system administrator or security team, simply use the path to that truststore file in your Spring Boot application's configuration.
+	</p>
+</section>
+
+</body>
+</html>
